@@ -21,16 +21,16 @@ const Home = () => {
 
   if (isLoading) {
     return (
-      <div className="flex justify-center items-center h-screen">
-        <div className="text-2xl text-gray-600">Loading...</div>
+      <div className="flex justify-center items-center h-screen bg-gray-900">
+        <div className="text-2xl text-pink-400">Loading...</div>
       </div>
     )
   }
 
   if (isError) {
     return (
-      <div className="flex justify-center items-center h-screen">
-        <div className="text-2xl text-red-600">
+      <div className="flex justify-center items-center h-screen bg-gray-900">
+        <div className="text-2xl text-red-400">
           Error: {error.message}
         </div>
       </div>
@@ -39,7 +39,7 @@ const Home = () => {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-      <h1 className="text-4xl font-bold text-gray-900 mb-8">Our Products</h1>
+      <h1 className="text-4xl font-black text-pink-400 mb-8 tracking-wide">NEW ARRIVALS</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
         {products?.map((product) => (
           <ProductCard key={product._id} product={product} />

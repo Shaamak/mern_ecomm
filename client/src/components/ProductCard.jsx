@@ -11,7 +11,7 @@ const ProductCard = ({ product }) => {
   }
 
   return (
-    <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+    <div className="bg-gray-800 rounded-xl overflow-hidden shadow-2xl shadow-gray-700/50 border border-gray-700 hover:shadow-pink-400/20 transition-all duration-300">
       <Link to={`/product/${product._id}`}>
         <img
           src={product.image}
@@ -21,22 +21,22 @@ const ProductCard = ({ product }) => {
       </Link>
       <div className="p-4">
         <Link to={`/product/${product._id}`}>
-          <h3 className="text-lg font-semibold text-gray-800 hover:text-blue-600">
+          <h3 className="text-xl font-bold text-pink-400 hover:text-cyan-400 transition-colors">
             {product.name}
           </h3>
         </Link>
-        <p className="text-gray-600 text-sm mt-1 line-clamp-2">
+        <p className="text-gray-400 text-sm mt-1 line-clamp-2">
           {product.description}
         </p>
         <div className="mt-4 flex items-center justify-between">
-          <span className="text-xl font-bold text-blue-600">
+          <span className="text-2xl font-black text-cyan-400">
             ${product.price.toFixed(2)}
           </span>
           <button
             onClick={handleAddToCart}
-            className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors"
+            className="btn-secondary-hyper"
           >
-            Add to Cart
+            + Cart
           </button>
         </div>
       </div>

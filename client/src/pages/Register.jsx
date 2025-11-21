@@ -50,11 +50,11 @@ const Register = () => {
   }
 
   return (
-    <div className="max-w-md mx-auto mt-10 p-8 border rounded-lg shadow-lg bg-white">
-      <h1 className="text-3xl font-bold mb-6 text-center text-gray-900">Register</h1>
+    <div className="max-w-md mx-auto mt-10 p-8 border-2 border-pink-400/50 rounded-xl shadow-2xl shadow-cyan-500/20 bg-gray-800">
+      <h1 className="text-4xl font-black mb-6 text-center text-pink-400 tracking-wide">JOIN THE CLUB</h1>
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
+          <label className="block text-sm font-medium text-gray-300 mb-1">
             Name
           </label>
           <input
@@ -62,11 +62,11 @@ const Register = () => {
             value={name}
             onChange={(e) => setName(e.target.value)}
             required
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            className="w-full px-4 py-3 border border-gray-700 rounded-lg bg-gray-900 text-white focus:ring-2 focus:ring-cyan-400 focus:border-transparent"
           />
         </div>
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
+          <label className="block text-sm font-medium text-gray-300 mb-1">
             Email Address
           </label>
           <input
@@ -74,11 +74,11 @@ const Register = () => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            className="w-full px-4 py-3 border border-gray-700 rounded-lg bg-gray-900 text-white focus:ring-2 focus:ring-cyan-400 focus:border-transparent"
           />
         </div>
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
+          <label className="block text-sm font-medium text-gray-300 mb-1">
             Password
           </label>
           <input
@@ -86,11 +86,11 @@ const Register = () => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            className="w-full px-4 py-3 border border-gray-700 rounded-lg bg-gray-900 text-white focus:ring-2 focus:ring-cyan-400 focus:border-transparent"
           />
         </div>
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
+          <label className="block text-sm font-medium text-gray-300 mb-1">
             Confirm Password
           </label>
           <input
@@ -98,21 +98,21 @@ const Register = () => {
             value={confirmPassword}
             onChange={(e) => setConfirmPassword(e.target.value)}
             required
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            className="w-full px-4 py-3 border border-gray-700 rounded-lg bg-gray-900 text-white focus:ring-2 focus:ring-cyan-400 focus:border-transparent"
           />
         </div>
         <button
           type="submit"
           disabled={loading}
-          className="w-full bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors font-semibold disabled:bg-gray-400"
+          className="btn-primary-hyper w-full text-base mt-6"
         >
-          {loading ? 'Registering...' : 'Register'}
+          {loading ? 'REGISTERING...' : 'REGISTER'}
         </button>
       </form>
-      <p className="mt-4 text-center text-gray-600">
+      <p className="mt-6 text-center text-gray-400">
         Already have an account?{' '}
-        <Link to={`/login?redirect=${redirect}`} className="text-blue-600 hover:underline">
-          Login
+        <Link to={`/login?redirect=${redirect}`} className="text-cyan-400 font-semibold hover:text-pink-400 hover:underline transition-colors">
+          Login Here
         </Link>
       </p>
     </div>

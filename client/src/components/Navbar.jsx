@@ -19,21 +19,21 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="bg-white shadow-lg">
+      <nav className="bg-gray-800 shadow-xl border-b-2 border-pink-500">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-16">
             <div className="flex items-center">
-              <Link to="/" className="text-2xl font-bold text-blue-600">
-                E-Shop
+              <Link to="/" className="text-2xl font-black text-pink-400 tracking-wider">
+                E-SHOP
               </Link>
             </div>
             <div className="flex items-center space-x-4">
-              <Link to="/" className="text-gray-700 hover:text-blue-600 px-3 py-2">
+              <Link to="/" className="text-gray-300 hover:text-cyan-400 px-3 py-2">
                 Home
               </Link>
               <button
                 onClick={() => setIsCartOpen(true)}
-                className="relative text-gray-700 hover:text-blue-600 px-3 py-2"
+                className="relative text-gray-300 hover:text-cyan-400 px-3 py-2"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -50,7 +50,7 @@ const Navbar = () => {
                   />
                 </svg>
                 {getCartCount() > 0 && (
-                  <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
+                  <span className="absolute -top-1 -right-1 bg-cyan-400 text-gray-900 text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">
                     {getCartCount()}
                   </span>
                 )}
@@ -58,18 +58,18 @@ const Navbar = () => {
               
               {userInfo ? (
                 <>
-                  <span className="text-gray-700 px-3 py-2 hidden sm:block">
-                    Hi, {userInfo.name.split(' ')[0]}
+                  <span className="text-gray-300 px-3 py-2 hidden sm:block">
+                    Yo, {userInfo.name.split(' ')[0]}
                   </span>
                   <button
                     onClick={logoutHandler}
-                    className="text-gray-700 hover:text-blue-600 px-3 py-2"
+                    className="text-gray-300 hover:text-cyan-400 px-3 py-2"
                   >
                     Logout
                   </button>
                 </>
               ) : (
-                <Link to="/login" className="text-gray-700 hover:text-blue-600 px-3 py-2">
+                <Link to="/login" className="text-gray-300 hover:text-cyan-400 px-3 py-2">
                   Login
                 </Link>
               )}

@@ -31,16 +31,16 @@ const ProductDetail = () => {
 
   if (isLoading) {
     return (
-      <div className="flex justify-center items-center h-screen">
-        <div className="text-2xl text-gray-600">Loading...</div>
+      <div className="flex justify-center items-center h-screen bg-gray-900">
+        <div className="text-2xl text-pink-400">Loading...</div>
       </div>
     )
   }
 
   if (isError) {
     return (
-      <div className="flex justify-center items-center h-screen">
-        <div className="text-2xl text-red-600">
+      <div className="flex justify-center items-center h-screen bg-gray-900">
+        <div className="text-2xl text-red-400">
           {error.response?.status === 404
             ? 'Product not found'
             : `Error: ${error.message}`}
@@ -55,7 +55,7 @@ const ProductDetail = () => {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <button
         onClick={() => navigate(-1)}
-        className="mb-4 text-blue-600 hover:text-blue-800 flex items-center"
+        className="mb-4 text-cyan-400 hover:text-pink-400 flex items-center transition-colors font-semibold"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -73,7 +73,7 @@ const ProductDetail = () => {
         </svg>
         Back
       </button>
-      <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+      <div className="bg-gray-800 rounded-xl shadow-2xl shadow-cyan-500/10 overflow-hidden border border-gray-700">
         <div className="md:flex">
           <div className="md:flex-shrink-0 md:w-1/2">
             <img
@@ -83,26 +83,26 @@ const ProductDetail = () => {
             />
           </div>
           <div className="p-8 md:w-1/2">
-            <h1 className="text-3xl font-bold text-gray-900 mb-4">
+            <h1 className="text-4xl font-black text-pink-400 mb-4 tracking-wide">
               {product.name}
             </h1>
-            <p className="text-gray-600 mb-4">{product.description}</p>
+            <p className="text-gray-300 mb-6">{product.description}</p>
             <div className="mb-4">
-              <span className="text-sm text-gray-500">Category:</span>
-              <span className="ml-2 text-gray-700">{product.category}</span>
+              <span className="text-sm text-gray-400">Category:</span>
+              <span className="ml-2 text-pink-400 font-semibold">{product.category}</span>
             </div>
-            <div className="mb-4">
-              <span className="text-sm text-gray-500">Stock:</span>
-              <span className="ml-2 text-gray-700">{product.stock} available</span>
+            <div className="mb-6">
+              <span className="text-sm text-gray-400">Stock:</span>
+              <span className="ml-2 text-cyan-400 font-semibold">{product.stock} available</span>
             </div>
-            <div className="text-4xl font-bold text-blue-600 mb-6">
+            <div className="text-5xl font-black text-cyan-400 mb-8">
               ${product.price.toFixed(2)}
             </div>
             <button
               onClick={handleAddToCart}
-              className="w-full bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors text-lg font-semibold"
+              className="btn-primary-hyper w-full text-base"
             >
-              Add to Cart
+              ADD TO CART
             </button>
           </div>
         </div>

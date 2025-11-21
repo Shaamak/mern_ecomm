@@ -15,16 +15,16 @@ const Cart = ({ isOpen, onClose }) => {
   return (
     <>
       <div
-        className="fixed inset-0 bg-black bg-opacity-50 z-40"
+        className="fixed inset-0 bg-black bg-opacity-70 z-40"
         onClick={onClose}
       />
-      <div className="fixed right-0 top-0 h-full w-full max-w-md bg-white shadow-xl z-50 transform transition-transform">
+      <div className="fixed right-0 top-0 h-full w-full max-w-md bg-gray-800 shadow-2xl shadow-pink-500/30 z-50 transform transition-transform">
         <div className="flex flex-col h-full">
-          <div className="flex items-center justify-between p-4 border-b">
-            <h2 className="text-xl font-bold">Shopping Cart</h2>
+          <div className="flex items-center justify-between p-4 border-b border-gray-700">
+            <h2 className="text-2xl font-black text-pink-400">Your Loot</h2>
             <button
               onClick={onClose}
-              className="text-gray-500 hover:text-gray-700"
+              className="text-gray-500 hover:text-pink-400"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -45,13 +45,13 @@ const Cart = ({ isOpen, onClose }) => {
 
           <div className="flex-1 overflow-y-auto p-4">
             {cartItems.length === 0 ? (
-              <p className="text-center text-gray-500 mt-8">Your cart is empty</p>
+              <p className="text-center text-gray-500 mt-8">Your cart is empty. Go get some drip.</p>
             ) : (
-              <div className="space-y-4">
+              <div className="space-y-6">
                 {cartItems.map(item => (
                   <div
                     key={item._id}
-                    className="flex items-center space-x-4 border-b pb-4"
+                    className="flex items-center space-x-4 border-b border-gray-700 pb-4"
                   >
                     <img
                       src={item.image}
@@ -59,19 +59,19 @@ const Cart = ({ isOpen, onClose }) => {
                       className="w-20 h-20 object-cover rounded"
                     />
                     <div className="flex-1">
-                      <h3 className="font-semibold">{item.name}</h3>
-                      <p className="text-blue-600">${item.price.toFixed(2)}</p>
+                      <h3 className="font-bold text-gray-100">{item.name}</h3>
+                      <p className="text-cyan-400 font-semibold">${item.price.toFixed(2)}</p>
                       <div className="flex items-center space-x-2 mt-2">
                         <button
                           onClick={() => updateQuantity(item._id, item.quantity - 1)}
-                          className="w-8 h-8 rounded bg-gray-200 hover:bg-gray-300"
+                          className="w-8 h-8 rounded bg-gray-700 text-pink-400 font-bold hover:bg-gray-600"
                         >
                           -
                         </button>
-                        <span className="w-8 text-center">{item.quantity}</span>
+                        <span className="w-8 text-center text-gray-100">{item.quantity}</span>
                         <button
                           onClick={() => updateQuantity(item._id, item.quantity + 1)}
-                          className="w-8 h-8 rounded bg-gray-200 hover:bg-gray-300"
+                          className="w-8 h-8 rounded bg-gray-700 text-pink-400 font-bold hover:bg-gray-600"
                         >
                           +
                         </button>
@@ -79,7 +79,7 @@ const Cart = ({ isOpen, onClose }) => {
                     </div>
                     <button
                       onClick={() => removeFromCart(item._id)}
-                      className="text-red-500 hover:text-red-700"
+                      className="text-red-500 hover:text-red-400"
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -103,16 +103,16 @@ const Cart = ({ isOpen, onClose }) => {
           </div>
 
           {cartItems.length > 0 && (
-            <div className="border-t p-4 space-y-4">
-              <div className="flex justify-between text-xl font-bold">
-                <span>Total:</span>
-                <span>${getCartTotal().toFixed(2)}</span>
+            <div className="border-t border-gray-700 p-4 space-y-4">
+              <div className="flex justify-between text-2xl font-black">
+                <span>TOTAL:</span>
+                <span className="text-pink-400">${getCartTotal().toFixed(2)}</span>
               </div>
               <button
                 onClick={handleCheckout}
-                className="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition-colors"
+                className="btn-primary-hyper w-full"
               >
-                Proceed to Checkout
+                CASH OUT
               </button>
             </div>
           )}

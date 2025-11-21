@@ -10,7 +10,7 @@ import ProtectedRoute from './components/ProtectedRoute' // Import
 function App() {
   return (
     <Router>
-      <div className="min-h-screen bg-gray-50">
+      <div className="min-h-screen bg-gray-900">
         <Navbar />
         <Routes>
           {/* Public Routes */}
