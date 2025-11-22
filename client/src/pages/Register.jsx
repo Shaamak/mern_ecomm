@@ -50,8 +50,8 @@ const Register = () => {
   }
 
   return (
-    <div className="max-w-md mx-auto mt-10 p-8 border-2 border-pink-400/50 rounded-xl shadow-2xl shadow-cyan-500/20 bg-gray-800">
-      <h1 className="text-4xl font-black mb-6 text-center text-pink-400 tracking-wide">JOIN THE CLUB</h1>
+    <div className="max-w-md mx-auto mt-10 p-8 border-2 border-emerald-400/50 rounded-xl shadow-2xl shadow-amber-500/20 bg-gray-700">
+      <h1 className="text-4xl font-black mb-6 text-center text-emerald-400 tracking-wide">JOIN THE CLUB</h1>
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
           <label className="block text-sm font-medium text-gray-300 mb-1">
@@ -62,7 +62,7 @@ const Register = () => {
             value={name}
             onChange={(e) => setName(e.target.value)}
             required
-            className="w-full px-4 py-3 border border-gray-700 rounded-lg bg-gray-900 text-white focus:ring-2 focus:ring-cyan-400 focus:border-transparent"
+            className="form-input-hyper"
           />
         </div>
         <div>
@@ -74,7 +74,7 @@ const Register = () => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
-            className="w-full px-4 py-3 border border-gray-700 rounded-lg bg-gray-900 text-white focus:ring-2 focus:ring-cyan-400 focus:border-transparent"
+            className="form-input-hyper"
           />
         </div>
         <div>
@@ -86,7 +86,7 @@ const Register = () => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
-            className="w-full px-4 py-3 border border-gray-700 rounded-lg bg-gray-900 text-white focus:ring-2 focus:ring-cyan-400 focus:border-transparent"
+            className="form-input-hyper"
           />
         </div>
         <div>
@@ -98,7 +98,7 @@ const Register = () => {
             value={confirmPassword}
             onChange={(e) => setConfirmPassword(e.target.value)}
             required
-            className="w-full px-4 py-3 border border-gray-700 rounded-lg bg-gray-900 text-white focus:ring-2 focus:ring-cyan-400 focus:border-transparent"
+            className="form-input-hyper"
           />
         </div>
         <button
@@ -111,7 +111,7 @@ const Register = () => {
       </form>
       <p className="mt-6 text-center text-gray-400">
         Already have an account?{' '}
-        <Link to={`/login?redirect=${redirect}`} className="text-cyan-400 font-semibold hover:text-pink-400 hover:underline transition-colors">
+        <Link to={`/login?redirect=${redirect}`} className="text-amber-400 font-semibold hover:text-emerald-400 hover:underline transition-colors">
           Login Here
         </Link>
       </p>

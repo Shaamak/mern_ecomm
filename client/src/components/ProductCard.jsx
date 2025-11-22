@@ -11,7 +11,7 @@ const ProductCard = ({ product }) => {
   }
 
   return (
-    <div className="bg-gray-800 rounded-xl overflow-hidden shadow-2xl shadow-gray-700/50 border border-gray-700 hover:shadow-pink-400/20 transition-all duration-300">
+    <div className="bg-gray-700 rounded-xl overflow-hidden shadow-2xl shadow-gray-700/50 border border-gray-600 hover:shadow-emerald-400/20 transition-all duration-300">
       <Link to={`/product/${product._id}`}>
         <img
           src={product.image}
@@ -21,7 +21,7 @@ const ProductCard = ({ product }) => {
       </Link>
       <div className="p-4">
         <Link to={`/product/${product._id}`}>
-          <h3 className="text-xl font-bold text-pink-400 hover:text-cyan-400 transition-colors">
+          <h3 className="text-xl font-bold text-emerald-400 hover:text-amber-400 transition-colors">
             {product.name}
           </h3>
         </Link>
@@ -29,7 +29,7 @@ const ProductCard = ({ product }) => {
           {product.description}
         </p>
         <div className="mt-4 flex items-center justify-between">
-          <span className="text-2xl font-black text-cyan-400">
+          <span className="text-2xl font-black text-amber-400">
             ${product.price.toFixed(2)}
           </span>
           <button

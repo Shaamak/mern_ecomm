@@ -31,15 +31,15 @@ const ProductDetail = () => {
 
   if (isLoading) {
     return (
-      <div className="flex justify-center items-center h-screen bg-gray-900">
-        <div className="text-2xl text-pink-400">Loading...</div>
+      <div className="flex justify-center items-center h-screen bg-gray-800">
+        <div className="text-2xl text-emerald-400">Loading...</div>
       </div>
     )
   }
 
   if (isError) {
     return (
-      <div className="flex justify-center items-center h-screen bg-gray-900">
+      <div className="flex justify-center items-center h-screen bg-gray-800">
         <div className="text-2xl text-red-400">
           {error.response?.status === 404
             ? 'Product not found'
@@ -55,7 +55,7 @@ const ProductDetail = () => {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <button
         onClick={() => navigate(-1)}
-        className="mb-4 text-cyan-400 hover:text-pink-400 flex items-center transition-colors font-semibold"
+        className="mb-4 text-amber-400 hover:text-emerald-400 flex items-center transition-colors font-semibold"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -73,7 +73,7 @@ const ProductDetail = () => {
         </svg>
         Back
       </button>
-      <div className="bg-gray-800 rounded-xl shadow-2xl shadow-cyan-500/10 overflow-hidden border border-gray-700">
+      <div className="bg-gray-700 rounded-xl shadow-2xl shadow-amber-500/10 overflow-hidden border border-gray-600">
         <div className="md:flex">
           <div className="md:flex-shrink-0 md:w-1/2">
             <img
@@ -83,19 +83,19 @@ const ProductDetail = () => {
             />
           </div>
           <div className="p-8 md:w-1/2">
-            <h1 className="text-4xl font-black text-pink-400 mb-4 tracking-wide">
+            <h1 className="text-4xl font-black text-emerald-400 mb-4 tracking-wide">
               {product.name}
             </h1>
             <p className="text-gray-300 mb-6">{product.description}</p>
             <div className="mb-4">
               <span className="text-sm text-gray-400">Category:</span>
-              <span className="ml-2 text-pink-400 font-semibold">{product.category}</span>
+              <span className="ml-2 text-emerald-400 font-semibold">{product.category}</span>
             </div>
             <div className="mb-6">
               <span className="text-sm text-gray-400">Stock:</span>
-              <span className="ml-2 text-cyan-400 font-semibold">{product.stock} available</span>
+              <span className="ml-2 text-amber-400 font-semibold">{product.stock} available</span>
             </div>
-            <div className="text-5xl font-black text-cyan-400 mb-8">
+            <div className="text-5xl font-black text-amber-400 mb-8">
               ${product.price.toFixed(2)}
             </div>
             <button

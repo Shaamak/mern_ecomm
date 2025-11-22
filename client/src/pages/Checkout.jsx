@@ -49,7 +49,7 @@ const Checkout = () => {
     return (
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="text-center">
-          <h2 className="text-3xl font-black text-pink-400 mb-6">
+          <h2 className="text-3xl font-black text-emerald-400 mb-6">
             Your cart is empty
           </h2>
           <button
@@ -65,10 +65,10 @@ const Checkout = () => {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-      <h1 className="text-4xl font-black text-pink-400 mb-8 tracking-wide">CHECKOUT</h1>
+      <h1 className="text-4xl font-black text-emerald-400 mb-8 tracking-wide">CHECKOUT</h1>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         <div>
-          <h2 className="text-xl font-bold text-gray-100 mb-4 border-b border-pink-400/50 pb-2">Shipping Information</h2>
+          <h2 className="text-xl font-bold text-gray-100 mb-4 border-b border-emerald-400/50 pb-2">Shipping Information</h2>
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
               <label className="block text-sm font-medium text-gray-300 mb-1">
@@ -78,7 +78,7 @@ const Checkout = () => {
                 type="text"
                 value={userInfo.name}
                 disabled
-                className="w-full px-4 py-3 border border-gray-700 rounded-lg bg-gray-900 text-gray-500 cursor-not-allowed"
+                className="w-full px-4 py-3 border border-gray-600 rounded-lg bg-gray-800 text-gray-500 cursor-not-allowed"
               />
             </div>
             <div>
@@ -89,7 +89,7 @@ const Checkout = () => {
                 type="email"
                 value={userInfo.email}
                 disabled
-                className="w-full px-4 py-3 border border-gray-700 rounded-lg bg-gray-900 text-gray-500 cursor-not-allowed"
+                className="w-full px-4 py-3 border border-gray-600 rounded-lg bg-gray-800 text-gray-500 cursor-not-allowed"
               />
             </div>
             <div>
@@ -102,7 +102,7 @@ const Checkout = () => {
                 onChange={(e) => setAddress(e.target.value)}
                 required
                 rows="3"
-                className="w-full px-4 py-3 border border-gray-700 rounded-lg bg-gray-900 text-white focus:ring-2 focus:ring-cyan-400 focus:border-transparent"
+                className="form-input-hyper"
               />
             </div>
             <button
@@ -116,8 +116,8 @@ const Checkout = () => {
         </div>
 
         <div>
-          <h2 className="text-xl font-bold text-gray-100 mb-4 border-b border-pink-400/50 pb-2">Order Summary</h2>
-          <div className="bg-gray-900 rounded-xl shadow-2xl shadow-cyan-500/10 p-6 border-2 border-cyan-400/30">
+          <h2 className="text-xl font-bold text-gray-100 mb-4 border-b border-emerald-400/50 pb-2">Order Summary</h2>
+          <div className="bg-gray-800 rounded-xl shadow-2xl shadow-amber-500/10 p-6 border-2 border-amber-400/30">
             <div className="space-y-4 mb-4">
               {cartItems.map(item => (
                 <div key={item._id} className="flex justify-between items-center">
@@ -125,7 +125,7 @@ const Checkout = () => {
                     <img
                       src={item.image}
                       alt={item.name}
-                      className="w-16 h-16 object-cover rounded-md border border-gray-700"
+                      className="w-16 h-16 object-cover rounded-md border border-gray-600"
                     />
                     <div>
                       <p className="font-semibold text-gray-100">{item.name}</p>
@@ -134,16 +134,16 @@ const Checkout = () => {
                       </p>
                     </div>
                   </div>
-                  <p className="font-bold text-pink-400">
+                  <p className="font-bold text-emerald-400">
                     ${(item.price * item.quantity).toFixed(2)}
                   </p>
                 </div>
               ))}
             </div>
-            <div className="border-t border-gray-700 pt-4">
+            <div className="border-t border-gray-600 pt-4">
               <div className="flex justify-between text-2xl font-black">
                 <span>TOTAL:</span>
-                <span className="text-cyan-400">${getCartTotal().toFixed(2)}</span>
+                <span className="text-amber-400">${getCartTotal().toFixed(2)}</span>
               </div>
             </div>
           </div>
