@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    /* Deeper, more formal gray background */
+    @apply bg-gray-800 text-gray-100; 
+    font-family: 'Inter', sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue';
+  }
+  
+  h1 {
+    /* Primary authority color: Emerald */
+    @apply text-emerald-400;
+  }
+}
+
+@layer components {
+  /* Primary Button (e.g., Place Order, Register, Login) - Emerald/Authority Focus */
+  .btn-primary-hyper {
+    @apply font-black py-3 px-6 rounded-lg transition-all duration-300 
+           uppercase tracking-widest text-sm 
+           /* Base style: Solid, professional color */
+           bg-emerald-600 text-white 
+           /* Sharper depth shadow */
+           shadow-xl shadow-emerald-700/50 
+           /* Hover style: Slightly lighter, pronounced lift */
+           hover:bg-emerald-500 hover:shadow-2xl hover:shadow-emerald-600/70
+           /* Disabled style */
+           disabled:bg-gray-700 disabled:text-gray-400 disabled:shadow-none;
+  }
+
+  /* Secondary Button (e.g., Add to Cart) - Amber/Highlight Focus */
+  .btn-secondary-hyper {
+    @apply font-bold py-2 px-4 rounded-md transition-all duration-300 
+           /* Base style: High contrast text on dark background */
+           bg-gray-700 border-2 border-amber-400 text-amber-400 
+           /* Hover style: Solid color fill for attention */
+           hover:bg-amber-400 hover:text-gray-900 hover:border-amber-400 hover:shadow-lg hover:shadow-amber-500/50;
+  }
+
+  /* Universal Input/Textarea style for a glowing focus state */
+  .form-input-hyper {
+    /* Note: Using gray-700 background for form fields on a gray-800 page background */
+    @apply w-full px-4 py-3 border border-gray-600 rounded-lg bg-gray-700 text-white 
+           focus:ring-2 focus:ring-emerald-400 focus:border-emerald-400;
+  }
+}
+
+/* Existing content */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-moz-osx-smoothing: grayscale;
+}
